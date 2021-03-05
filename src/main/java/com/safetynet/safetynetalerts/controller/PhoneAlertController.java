@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/phonealert")
@@ -21,6 +23,8 @@ public class PhoneAlertController {
 
     @GetMapping
     public List<PhoneAlertDTO> getStation(@RequestParam String phone){
-        return service.getStation(phone);
+        // TODO
+        // return service.getStation(phone);
+        return null;
     }
 }

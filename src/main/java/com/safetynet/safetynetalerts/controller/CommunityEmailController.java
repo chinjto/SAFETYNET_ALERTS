@@ -23,7 +23,7 @@ public class CommunityEmailController {
     }
 
     @GetMapping
-    public List<CommunityEmailDTO> getAll(@RequestParam(required = false) String city){
+    public Iterable<CommunityEmailDTO> getAll(@RequestParam(required = false) String city){
         return service.getAll(city);
     }
 
