@@ -14,7 +14,7 @@ public class FloodStationsDTO {
 
     private String lastname;
     private String phone;
-    private int age;
+    private String age;
     private String medications;
     private String allergies;
 

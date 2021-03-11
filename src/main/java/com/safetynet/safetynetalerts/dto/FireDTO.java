@@ -15,7 +15,7 @@ public class FireDTO {
 
 
     private String lastname;
-    private int age;
+    private String age;
     private String phone;
     private String medications;
     private String allergies;

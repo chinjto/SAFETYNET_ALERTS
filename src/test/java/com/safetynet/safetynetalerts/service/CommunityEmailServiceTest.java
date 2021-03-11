@@ -1,7 +1,10 @@
 package com.safetynet.safetynetalerts.service;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+
 
 class CommunityEmailServiceTest {
+
+
 
 }
