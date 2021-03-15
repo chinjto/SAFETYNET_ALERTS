@@ -5,7 +5,6 @@ import com.safetynet.safetynetalerts.entity.Person;
 import com.safetynet.safetynetalerts.mapper.CommunityEmailToPersonMapper;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 

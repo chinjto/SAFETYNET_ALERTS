@@ -76,7 +76,11 @@
 			<artifactId>json</artifactId>
 			<version>20201115</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.jsoniter</groupId>
+			<artifactId>jsoniter</artifactId>
+			<version>0.9.23</version>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
@@ -119,8 +123,14 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
+			<version>3.19.0</version>
+			<scope>test</scope>
         </dependency>
-    </dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+		</dependency>
+	</dependencies>
 
 <!-- BUILD & PLUGINS -->
 	<build>
