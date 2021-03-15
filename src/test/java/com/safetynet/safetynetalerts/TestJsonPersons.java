@@ -1,6 +1,7 @@
 package com.safetynet.safetynetalerts;
 
 import com.jsoniter.JsonIterator;
+import com.jsoniter.output.JsonStream;
 import com.safetynet.safetynetalerts.entity.FireStation;
 import com.safetynet.safetynetalerts.entity.InputData;
 import com.safetynet.safetynetalerts.entity.MedicalRecord;
@@ -9,6 +10,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.Scanner;
 
 
 public class TestJsonPersons {
@@ -189,7 +192,7 @@ public class TestJsonPersons {
     }
 
     @Test
-    public void whenParsedInputDataWithEndpoint_thenConvertedToJavaObjectCorrectly() throws IOException {
+    public void whenParsedInputDataWithEndpoint_thenConvertedToJavaObjectCorrectly() {
         String input = "{\n" +
                 "    \"persons\": [\n" +
                 "        { \"firstName\":\"John\", \"lastName\":\"Boyd\", \"address\":\"1509 Culver St\", \"city\":\"Culver\", \"zip\":\"97451\", \"phone\":\"841-874-6512\", \"email\":\"jaboyd@email.com\" },\n" +
@@ -259,6 +262,27 @@ public class TestJsonPersons {
                 "}";
 
         InputData data = JsonIterator.deserialize(input, InputData.class);
+
+        Assert.assertEquals(23, data.getPersons().length);
+        Assert.assertEquals(13, data.getFirestations().length);
+        Assert.assertEquals(23, data.getMedicalrecords().length);
+
+    }
+
+    @Test
+    public void whenParsedInputFile_thenConvertedToJavaObjectCorrectly() throws IOException {
+        final String input = "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/DA+Java+EN/P5+/data.json";
+        final URL url = new URL(input);
+
+        final Scanner scan = new Scanner(url.openStream());
+        final StringBuilder strBuilder = new StringBuilder();
+        while (scan.hasNext())
+            strBuilder.append(scan.nextLine());
+        scan.close();
+        final String strIn = strBuilder.toString();
+        final InputData data = JsonIterator.deserialize(strIn, InputData.class);
+        final String strOut = JsonStream.serialize(data);
+        System.out.println(strOut);
 
         Assert.assertEquals(23, data.getPersons().length);
         Assert.assertEquals(13, data.getFirestations().length);
