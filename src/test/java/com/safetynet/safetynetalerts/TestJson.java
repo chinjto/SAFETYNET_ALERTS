@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.Scanner;
 
 
-public class TestJsonPersons {
+public class TestJson {
     @Test
     public void whenParsedPersonsEndpoint_thenConvertedToJavaObjectCorrectly() {
         String input = "{ \"firstName\":\"John\", \"lastName\":\"Boyd\", \"address\":\"1509 Culver St\", \"city\":\"Culver\", \"zip\":\"97451\", \"phone\":\"841-874-6512\", \"email\":\"jaboyd@email.com\" }";

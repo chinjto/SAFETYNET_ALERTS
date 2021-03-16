@@ -25,9 +25,4 @@ public class FireStationAdminController {
         return false;
     }
 
-//    @DeleteMapping
-//    public Boolean deleteFireStationByStation(@RequestParam String station) {
-//        // TODO
-//        return false;
-//    }
 }
