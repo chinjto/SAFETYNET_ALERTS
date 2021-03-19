@@ -13,13 +13,13 @@ import lombok.Data;
 @Data
 public class PersonInfoDTO {
 
-    private String firstName;
     private String lastname;
     private String address;
-    private String city;
-    private String zip;
-    private String phone;
+    private Integer age;
     private String email;
+    private String medication;
+    private String dosage;
+    private String allergies;
 
 
 }

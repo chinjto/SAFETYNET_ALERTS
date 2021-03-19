@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 @Data
-public class PersonDTO {
+public class PersonAdminDTO {
 
     private String firstName;
 

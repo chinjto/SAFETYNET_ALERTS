@@ -12,10 +12,8 @@ import lombok.Data;
 @Data
 public class FloodStationsDTO {
 
-    private String lastname;
-    private String phone;
-    private String age;
-    private String medications;
-    private String allergies;
+    private Liste<address> address;
+
+    private
 
 }

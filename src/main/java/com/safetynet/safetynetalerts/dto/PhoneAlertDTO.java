@@ -12,5 +12,5 @@ import lombok.Data;
 @Data
 public class PhoneAlertDTO {
 
-    private String phone;
+    private List<String> phone;
 }

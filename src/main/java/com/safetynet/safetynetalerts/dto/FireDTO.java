@@ -14,9 +14,7 @@ import lombok.Data;
 public class FireDTO {
 
 
-    private String lastname;
-    private String age;
-    private String phone;
-    private String medications;
-    private String allergies;
+    private List<person> address;
+    private Integer numberStation;
+
 }

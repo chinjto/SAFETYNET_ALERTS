@@ -2,6 +2,8 @@ package com.safetynet.safetynetalerts.dto;
 
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * Utilise cette url : http://localhost:8080/childAlert?address=<address>
  *
@@ -13,9 +15,9 @@ import lombok.Data;
 @Data
 public class ChildAlertDTO {
 
-    private String firstName;
-    private String lastName;
-    private String age;
+    private List<child> childs;
+
+    private String address;
 
 
 }

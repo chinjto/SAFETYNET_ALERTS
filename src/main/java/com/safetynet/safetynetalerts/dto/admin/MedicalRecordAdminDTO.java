@@ -3,7 +3,7 @@ package com.safetynet.safetynetalerts.dto.admin;
 import lombok.Data;
 
 @Data
-public class MedicalRecordDTO {
+public class MedicalRecordAdminDTO {
 
     private String firstName;
 
