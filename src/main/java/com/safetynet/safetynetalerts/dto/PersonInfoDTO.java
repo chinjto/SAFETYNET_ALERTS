@@ -20,4 +20,6 @@ public class PersonInfoDTO {
     private String zip;
     private String phone;
     private String email;
+
+
 }

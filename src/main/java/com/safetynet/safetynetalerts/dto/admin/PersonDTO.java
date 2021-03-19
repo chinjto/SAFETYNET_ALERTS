@@ -1,11 +1,13 @@
-package com.safetynet.safetynetalerts.entity;
+package com.safetynet.safetynetalerts.dto.admin;
 
 import lombok.Data;
 
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 @Data
-public class Person {
+public class PersonDTO {
 
     private String firstName;
 
@@ -20,9 +22,5 @@ public class Person {
     private String phone;
 
     private String email;
-
-    private List<MedicalRecord> medicalRecords;
-
-    private FireStation fireStation;
 
 }

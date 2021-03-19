@@ -14,7 +14,7 @@ public class MedicalRecordAdminController {
     }
 
     @PutMapping("/{id}")
-    public MedicalRecord updateMedicalRecord(@PathVariable Long id,@RequestBody MedicalRecord medicalRecord){
+    public MedicalRecord updateMedicalRecord(@PathVariable Long id, @RequestBody MedicalRecord medicalRecord){
         // TODO
         return medicalRecord;
     }
