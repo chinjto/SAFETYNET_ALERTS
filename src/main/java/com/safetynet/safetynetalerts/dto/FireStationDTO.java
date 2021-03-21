@@ -1,5 +1,6 @@
 package com.safetynet.safetynetalerts.dto;
 
+import com.safetynet.safetynetalerts.entity.Person;
 import lombok.Data;
 
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.List;
 @Data
 public class FireStationDTO {
 
-    private List<person> persons;
+    private List<Person> persons;
 
     private Integer adultQuantity;
 

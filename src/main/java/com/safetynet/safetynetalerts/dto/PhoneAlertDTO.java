@@ -2,6 +2,8 @@ package com.safetynet.safetynetalerts.dto;
 
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * Utilise cette url : http://localhost:8080/phoneAlert?firestation=<firestation_number>
  *
