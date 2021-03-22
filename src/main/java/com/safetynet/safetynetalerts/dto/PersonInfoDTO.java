@@ -1,5 +1,6 @@
 package com.safetynet.safetynetalerts.dto;
 
+import com.safetynet.safetynetalerts.entity.MedicalRecordEntity;
 import lombok.Data;
 
 /**
@@ -21,10 +22,6 @@ public class PersonInfoDTO {
 
     private String email;
 
-    private String medication;
-
-    private String dosage;
-
-    private String allergies;
+    private MedicalRecordEntity medicalRecord;
 
 }

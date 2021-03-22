@@ -9,12 +9,12 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class FireStation {
+public class FireStationEntity {
 
     private String address;
 
     private String station;
 
-    private List<Person> persons;
+    private List<PersonEntity> persons;
 
 }

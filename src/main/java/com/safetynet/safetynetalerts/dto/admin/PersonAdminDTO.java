@@ -1,5 +1,7 @@
 package com.safetynet.safetynetalerts.dto.admin;
 
+import com.safetynet.safetynetalerts.entity.PersonEntity;
+import com.safetynet.safetynetalerts.service.admin.PersonServiceAdmin;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -22,5 +24,13 @@ public class PersonAdminDTO {
     private String phone;
 
     private String email;
+
+    public static PersonServiceAdmin create(final PersonEntity item) {
+        return null;
+    }
+
+    public static PersonServiceAdmin update() {
+        return null;
+    }
 
 }

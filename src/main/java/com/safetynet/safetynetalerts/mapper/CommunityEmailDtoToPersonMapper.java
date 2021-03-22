@@ -1,12 +1,12 @@
 package com.safetynet.safetynetalerts.mapper;
 
 import com.safetynet.safetynetalerts.dto.CommunityEmailDTO;
-import com.safetynet.safetynetalerts.entity.Person;
+import com.safetynet.safetynetalerts.entity.PersonEntity;
 
 public interface CommunityEmailDtoToPersonMapper {
 
-    Iterable<CommunityEmailDTO> entityToDto(Iterable<Person> personList);
+    Iterable<CommunityEmailDTO> entityToDto(Iterable<PersonEntity> personList);
 
-    CommunityEmailDTO entityToDto(Person entity);
+    CommunityEmailDTO entityToDto(PersonEntity entity);
 
 }

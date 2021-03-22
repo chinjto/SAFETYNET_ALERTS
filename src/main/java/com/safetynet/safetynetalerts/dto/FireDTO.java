@@ -1,6 +1,6 @@
 package com.safetynet.safetynetalerts.dto;
 
-import com.safetynet.safetynetalerts.entity.Person;
+import com.safetynet.safetynetalerts.entity.PersonEntity;
 import lombok.Data;
 
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.List;
 @Data
 public class FireDTO {
 
-    private List<Person> address;
+    private List<PersonEntity> address;
 
     private Integer numberStation;
 

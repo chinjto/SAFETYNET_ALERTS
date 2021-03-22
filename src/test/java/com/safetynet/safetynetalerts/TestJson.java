@@ -2,10 +2,10 @@ package com.safetynet.safetynetalerts;
 
 import com.jsoniter.JsonIterator;
 import com.jsoniter.output.JsonStream;
-import com.safetynet.safetynetalerts.entity.FireStation;
-import com.safetynet.safetynetalerts.entity.InputData;
-import com.safetynet.safetynetalerts.entity.MedicalRecord;
-import com.safetynet.safetynetalerts.entity.Person;
+import com.safetynet.safetynetalerts.entity.FireStationEntity;
+import com.safetynet.safetynetalerts.entity.InputDataEntity;
+import com.safetynet.safetynetalerts.entity.MedicalRecordEntity;
+import com.safetynet.safetynetalerts.entity.PersonEntity;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -19,7 +19,7 @@ public class TestJson {
     public void whenParsedPersonsEndpoint_thenConvertedToJavaObjectCorrectly() {
         String input = "{ \"firstName\":\"John\", \"lastName\":\"Boyd\", \"address\":\"1509 Culver St\", \"city\":\"Culver\", \"zip\":\"97451\", \"phone\":\"841-874-6512\", \"email\":\"jaboyd@email.com\" }";
 
-        Person person = JsonIterator.deserialize(input, Person.class);
+        PersonEntity person = JsonIterator.deserialize(input, PersonEntity.class);
 
         Assert.assertEquals("John", person.getFirstName());
         Assert.assertEquals("Boyd", person.getLastName());
@@ -61,7 +61,7 @@ public class TestJson {
         JsonIterator iterator = JsonIterator.parse(input);
         iterator.readArray();
 
-        Person person = iterator.read(Person.class);
+        PersonEntity person = iterator.read(PersonEntity.class);
         Assert.assertEquals("John", person.getFirstName());
         Assert.assertEquals("Boyd", person.getLastName());
         Assert.assertEquals("1509 Culver St", person.getAddress());
@@ -71,7 +71,7 @@ public class TestJson {
         Assert.assertEquals("jaboyd@email.com", person.getEmail());
 
         iterator.readArray();
-        person = iterator.read(Person.class);
+        person = iterator.read(PersonEntity.class);
         Assert.assertEquals("Jacob", person.getFirstName());
         Assert.assertEquals("Boyd", person.getLastName());
         Assert.assertEquals("1509 Culver St", person.getAddress());
@@ -86,7 +86,7 @@ public class TestJson {
     public void whenParsedMedicalRecordEndpoint_thenConvertedToJavaObjectCorrectly() {
         String input = "{ \"firstName\":\"John\", \"lastName\":\"Boyd\", \"birthdate\":\"03/06/1984\", \"medications\":[\"aznol:350mg\", \"hydrapermazol:100mg\"], \"allergies\":[\"nillacilan\"] }";
 
-        MedicalRecord medicalRecord = JsonIterator.deserialize(input, MedicalRecord.class);
+        MedicalRecordEntity medicalRecord = JsonIterator.deserialize(input, MedicalRecordEntity.class);
 
         Assert.assertEquals("John", medicalRecord.getFirstName());
         Assert.assertEquals("Boyd", medicalRecord.getLastName());
@@ -128,7 +128,7 @@ public class TestJson {
         JsonIterator iterator = JsonIterator.parse(input);
         iterator.readArray();
 
-        MedicalRecord medicalRecord = iterator.read(MedicalRecord.class);
+        MedicalRecordEntity medicalRecord = iterator.read(MedicalRecordEntity.class);
         Assert.assertEquals("John", medicalRecord.getFirstName());
         Assert.assertEquals("Boyd", medicalRecord.getLastName());
         Assert.assertEquals("03/06/1984", medicalRecord.getBirthdate());
@@ -137,7 +137,7 @@ public class TestJson {
         Assert.assertEquals("nillacilan", medicalRecord.getAllergies()[0]);
 
         iterator.readArray();
-        medicalRecord = iterator.read(MedicalRecord.class);
+        medicalRecord = iterator.read(MedicalRecordEntity.class);
         Assert.assertEquals("Jacob", medicalRecord.getFirstName());
         Assert.assertEquals("Boyd", medicalRecord.getLastName());
         Assert.assertEquals("03/06/1989", medicalRecord.getBirthdate());
@@ -152,7 +152,7 @@ public class TestJson {
     public void whenParsedFireStationEndpoint_thenConvertedToJavaObjectCorrectly() {
         String input = "{ \"address\":\"1509 Culver St\", \"station\":\"3\" }";
 
-        FireStation fireStation = JsonIterator.deserialize(input, FireStation.class);
+        FireStationEntity fireStation = JsonIterator.deserialize(input, FireStationEntity.class);
 
         Assert.assertEquals("1509 Culver St", fireStation.getAddress());
         Assert.assertEquals("3", fireStation.getStation());
@@ -180,12 +180,12 @@ public class TestJson {
         JsonIterator iterator = JsonIterator.parse(input);
         iterator.readArray();
 
-        FireStation fireStation = iterator.read(FireStation.class);
+        FireStationEntity fireStation = iterator.read(FireStationEntity.class);
         Assert.assertEquals("1509 Culver St", fireStation.getAddress());
         Assert.assertEquals("3", fireStation.getStation());
 
         iterator.readArray();
-        fireStation = iterator.read(FireStation.class);
+        fireStation = iterator.read(FireStationEntity.class);
         Assert.assertEquals("29 15th St", fireStation.getAddress());
         Assert.assertEquals("2", fireStation.getStation());
 
@@ -261,7 +261,7 @@ public class TestJson {
                 "        ] \n" +
                 "}";
 
-        InputData data = JsonIterator.deserialize(input, InputData.class);
+        InputDataEntity data = JsonIterator.deserialize(input, InputDataEntity.class);
 
         Assert.assertEquals(23, data.getPersons().length);
         Assert.assertEquals(13, data.getFirestations().length);
@@ -280,7 +280,7 @@ public class TestJson {
             strBuilder.append(scan.nextLine());
         scan.close();
         final String strIn = strBuilder.toString();
-        final InputData data = JsonIterator.deserialize(strIn, InputData.class);
+        final InputDataEntity data = JsonIterator.deserialize(strIn, InputDataEntity.class);
         final String strOut = JsonStream.serialize(data);
         System.out.println(strOut);
 

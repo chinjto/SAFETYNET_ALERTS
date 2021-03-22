@@ -9,7 +9,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Person {
+public class PersonEntity {
 
     private String firstName;
 
@@ -25,8 +25,8 @@ public class Person {
 
     private String email;
 
-    private List<MedicalRecord> medicalRecords;
+    private List<MedicalRecordEntity> medicalRecords;
 
-    private FireStation fireStation;
+    private FireStationEntity fireStation;
 
 }

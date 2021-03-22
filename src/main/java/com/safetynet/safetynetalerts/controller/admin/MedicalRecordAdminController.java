@@ -1,30 +1,37 @@
 package com.safetynet.safetynetalerts.controller.admin;
 
-import com.safetynet.safetynetalerts.entity.MedicalRecord;
+import com.safetynet.safetynetalerts.dto.admin.MedicalRecordAdminDTO;
+import com.safetynet.safetynetalerts.dto.admin.PersonAdminDTO;
+import com.safetynet.safetynetalerts.service.admin.MedicalRecordServiceAdmin;
+import lombok.NonNull;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/medicalRecords")
+@RequestMapping("/medicalRecord")
 public class MedicalRecordAdminController {
 
-    @PostMapping
-    public MedicalRecord createMedicalRecord(@RequestBody MedicalRecord medicalRecord){
-        // TODO
-        return medicalRecord;
+    @NonNull
+    private MedicalRecordServiceAdmin service;
+
+
+    @GetMapping()
+    public Iterable<MedicalRecordAdminDTO> readAllPerson() {
+        return service.readAll();
+    }
+
+    @PostMapping()
+    public PersonAdminDTO createPerson(@RequestBody MedicalRecordAdminDTO item) {
+        return service.create(item);
     }
 
     @PutMapping("/{id}")
-    public MedicalRecord updateMedicalRecord(@PathVariable Long id, @RequestBody MedicalRecord medicalRecord){
-        // TODO
-        return medicalRecord;
+    public PersonAdminDTO updatePerson(@PathVariable Long id, @RequestBody MedicalRecordAdminDTO item) {
+        return service.update(id, item);
     }
 
     @DeleteMapping("/{id}")
-    public Boolean deleteMedicalRecord(@PathVariable Long id){
-        // TODO
-        return false;
+    public Boolean deleteMedicalRecord(@PathVariable Long id) {
+        return service.delete(id);
     }
-
-
 
 }
