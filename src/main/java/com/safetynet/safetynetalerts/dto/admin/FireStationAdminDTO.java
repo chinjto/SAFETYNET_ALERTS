@@ -1,6 +1,5 @@
 package com.safetynet.safetynetalerts.dto.admin;
 
-import com.safetynet.safetynetalerts.entity.FireStationEntity;
 import com.safetynet.safetynetalerts.service.admin.FireStationServiceAdmin;
 import lombok.Data;
 
@@ -15,11 +14,11 @@ public class FireStationAdminDTO {
         return null;
     }
 
-    public static FireStationServiceAdmin create(final FireStationAdminDTO fireStation) {
+    public static FireStationAdminDTO create(final FireStationAdminDTO fireStation) {
         return null;
     }
 
-    public static FireStationServiceAdmin update(final FireStationAdminDTO fireStation) {
+    public static FireStationAdminDTO update(final String address, final FireStationAdminDTO fireStation) {
         return null;
     }
 

@@ -20,17 +20,17 @@ public class FireStationAdminController {
     }
 
     @PostMapping
-    public FireStationServiceAdmin createFireStation(@RequestBody FireStationAdminDTO fireStation) {
+    public FireStationAdminDTO createFireStation(@RequestBody FireStationAdminDTO fireStation) {
         return FireStationAdminDTO.create(fireStation);
     }
 
     @PutMapping
-    public FireStationServiceAdmin updateFireStation(@RequestParam String adress, @RequestBody FireStationAdminDTO fireStation) {
-        return FireStationAdminDTO.update(fireStation);
+    public FireStationAdminDTO updateFireStation(@RequestParam String address, @RequestBody FireStationAdminDTO fireStation) {
+        return FireStationAdminDTO.update(address, fireStation);
     }
 
     @DeleteMapping
-    public Boolean delete (@RequestParam String address) {
+    public Boolean delete(@RequestParam String address) {
         return FireStationAdminDTO.delete(address);
     }
 

@@ -1,7 +1,7 @@
 package com.safetynet.safetynetalerts.controller.admin;
 
 import com.safetynet.safetynetalerts.dto.admin.MedicalRecordAdminDTO;
-import com.safetynet.safetynetalerts.dto.admin.PersonAdminDTO;
+import com.safetynet.safetynetalerts.entity.MedicalRecordEntity;
 import com.safetynet.safetynetalerts.service.admin.MedicalRecordServiceAdmin;
 import lombok.NonNull;
 import org.springframework.web.bind.annotation.*;
@@ -20,12 +20,12 @@ public class MedicalRecordAdminController {
     }
 
     @PostMapping()
-    public PersonAdminDTO createPerson(@RequestBody MedicalRecordAdminDTO item) {
+    public MedicalRecordAdminDTO createPerson(@RequestBody MedicalRecordAdminDTO item) {
         return service.create(item);
     }
 
     @PutMapping("/{id}")
-    public PersonAdminDTO updatePerson(@PathVariable Long id, @RequestBody MedicalRecordAdminDTO item) {
+    public MedicalRecordAdminDTO updatePerson(@PathVariable Long id, @RequestBody MedicalRecordAdminDTO item) {
         return service.update(id, item);
     }
 

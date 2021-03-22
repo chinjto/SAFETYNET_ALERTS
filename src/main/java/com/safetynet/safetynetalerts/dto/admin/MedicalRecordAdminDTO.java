@@ -17,20 +17,4 @@ public class MedicalRecordAdminDTO {
 
     private String[] allergies;
 
-    public static MedicalRecordServiceAdmin create(final MedicalRecordAdminDTO medicalRecord) {
-        return null;
-    }
-
-    public static Iterable<MedicalRecordServiceAdmin> readAll() {
-        return null;
-    }
-
-    public static MedicalRecordEntity update(final MedicalRecordAdminDTO medicalRecord) {
-        return null;
-    }
-
-    public void delete() {
-        return null;
-    }
-
 }

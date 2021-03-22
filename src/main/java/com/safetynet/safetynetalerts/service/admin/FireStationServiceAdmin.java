@@ -12,7 +12,7 @@ public class FireStationServiceAdmin {
         return null;
     }
 
-    public Iterable<FireStationServiceAdmin> readAll() {
+    public static Iterable<FireStationServiceAdmin> readAll() {
         return null;
     }
 
