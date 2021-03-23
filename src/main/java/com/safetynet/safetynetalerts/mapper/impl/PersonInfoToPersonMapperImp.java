@@ -24,8 +24,10 @@ public class PersonInfoToPersonMapperImp implements PersonInfoDtoToPersonMapper 
         dto.setLastname(entity.getLastName());
         dto.setEmail(entity.getEmail());
         dto.setAddress(entity.getAddress());
-        dto.setAge(entity.getMedicalRecords().get(0).getBirthdate());
-        dto.setMedicalRecords();
+        // FIXME problème de cast lors du mapping
+        //dto.setAge(entity.getMedicalRecords().get(0).getBirthdate());
+        // FIXME manque la donnée à enregistrer dans le DTO
+        //dto.setMedicalRecords();
         return dto;
     }
 
