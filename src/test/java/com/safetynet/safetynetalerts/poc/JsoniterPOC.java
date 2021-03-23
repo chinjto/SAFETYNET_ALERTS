@@ -1,4 +1,4 @@
-package com.safetynet.safetynetalerts;
+package com.safetynet.safetynetalerts.poc;
 
 import com.jsoniter.JsonIterator;
 import com.jsoniter.output.JsonStream;
@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.Scanner;
 
 
-public class TestJson {
+public class JsoniterPOC {
     @Test
     public void whenParsedPersonsEndpoint_thenConvertedToJavaObjectCorrectly() {
         String input = "{ \"firstName\":\"John\", \"lastName\":\"Boyd\", \"address\":\"1509 Culver St\", \"city\":\"Culver\", \"zip\":\"97451\", \"phone\":\"841-874-6512\", \"email\":\"jaboyd@email.com\" }";
