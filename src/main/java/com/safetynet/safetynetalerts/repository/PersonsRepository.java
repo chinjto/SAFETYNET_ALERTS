@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.Id;
 
 @Repository
-public interface PersonsRepository extends CrudRepository<PersonEntity, Id> {
+public interface PersonsRepository extends CrudRepository<PersonEntity, Long> {
 
 
     
