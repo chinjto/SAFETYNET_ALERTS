@@ -52,10 +52,9 @@ public class PersonAdminController {
 
     }
     @GetMapping("/find/{ID}")
-    public PersonAdminDTO findById(@PathVariable(value = "ID") Long id) {
+    public PersonAdminDTO getById(@PathVariable(value = "ID") Long id) {
 
         PersonEntity orElse = personsRepository.findAll(id).orElse();
-        assert orElse != null;
         return personMapper.entityToDto(orElse);
 
     }
