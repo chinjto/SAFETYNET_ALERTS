@@ -2,7 +2,7 @@ package com.safetynet.safetynetalerts.poc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.safetynet.safetynetalerts.entity.FireStationEntity;
+import com.safetynet.safetynetalerts.entity.InputDataEntity;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -28,17 +28,14 @@ public class JacksonApplicationPOC implements CommandLineRunner {
         objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
 
         // test sur la lecture
-        final File inFile = Paths.get("src/test/resources/firestation.json").toFile();
-        final FireStationEntity storedFireStation = objectMapper.readValue(inFile, FireStationEntity.class);
-        System.out.println(storedFireStation);
+        final File inFile = Paths.get("src/main/resources/data.json").toFile();
+        final InputDataEntity data = objectMapper.readValue(inFile, InputDataEntity.class);
+        System.out.println(data);
 
         // test sur l'écriture
-        final FireStationEntity newFireStation = new FireStationEntity(
-                "123 Test St",
-                "3"
-        );
-        final File outFile = Paths.get("src/test/resources/firestation2.json").toFile();
-        objectMapper.writeValue(outFile, newFireStation);
+        final File outFile = Paths.get("src/test/resources/data2.json").toFile();
+        objectMapper.writeValue(outFile, data);
+        //*/
 
         // fin du programme
         System.exit(0);
