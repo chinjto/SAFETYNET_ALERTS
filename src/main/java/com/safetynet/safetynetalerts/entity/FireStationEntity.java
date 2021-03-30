@@ -20,7 +20,4 @@ public class FireStationEntity {
 
     private String station;
 
-    @OneToMany
-    private List<PersonEntity> persons;
-
 }
