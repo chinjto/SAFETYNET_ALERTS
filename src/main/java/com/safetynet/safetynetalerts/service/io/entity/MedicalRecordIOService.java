@@ -4,12 +4,14 @@ import com.safetynet.safetynetalerts.io.datasource.DataSource;
 import com.safetynet.safetynetalerts.io.entity.MedicalRecordEntity;
 import com.safetynet.safetynetalerts.service.io.datasource.DataSourceService;
 import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class MedicalRecordIOService implements EntityService<MedicalRecordEntity> {
 
     @NonNull

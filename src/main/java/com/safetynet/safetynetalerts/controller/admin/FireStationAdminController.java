@@ -29,7 +29,7 @@ public class FireStationAdminController {
      * @return true if process succeeded, else false
      */
     @PostMapping
-    public Boolean create(FireStationAdminDTO data) throws IOException {
+    public Boolean create(@RequestBody FireStationAdminDTO data) throws IOException {
         return service.create(data);
     }
 
@@ -40,7 +40,7 @@ public class FireStationAdminController {
      * @return true if process succeeded, else false
      */
     @PutMapping
-    public Boolean update(FireStationAdminDTO data) throws IOException {
+    public Boolean update(@RequestBody FireStationAdminDTO data) throws IOException {
         return service.update(data);
     }
 
@@ -51,7 +51,7 @@ public class FireStationAdminController {
      * @return true if process succeeded, else false
      */
     @DeleteMapping
-    public Boolean delete(FireStationAdminDTO data) throws IOException {
+    public Boolean delete(@RequestBody FireStationAdminDTO data) throws IOException {
         return service.delete(data);
     }
 
