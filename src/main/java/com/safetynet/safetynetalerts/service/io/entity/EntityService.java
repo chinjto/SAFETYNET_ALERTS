@@ -10,4 +10,7 @@ public interface EntityService<E> {
 
     Boolean delete (E entity) throws IOException;
 
+    Iterable<E> readAll() throws IOException;
+
+    Iterable<E> readAllFilteredByCriteria(E criteria) throws IOException;
 }
