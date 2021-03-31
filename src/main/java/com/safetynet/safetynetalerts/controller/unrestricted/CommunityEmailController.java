@@ -17,8 +17,8 @@ public class CommunityEmailController {
     }
 
     @GetMapping
-    public Iterable<CommunityEmailDTO> getAll(@RequestBody(required = false) CommunityEmailDTO filter) throws IOException {
-        return service.readAll(filter);
+    public Iterable<CommunityEmailDTO> getAll(@RequestParam(required = false) String city) throws IOException {
+        return service.readAll(city);
     }
 
 }

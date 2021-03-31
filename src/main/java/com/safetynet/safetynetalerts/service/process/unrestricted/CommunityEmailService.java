@@ -20,10 +20,11 @@ public class CommunityEmailService {
     @NonNull
     private final EntityService<PersonEntity> entityService;
 
-    public Iterable<CommunityEmailDTO> readAll(CommunityEmailDTO filter) throws IOException {
+    public Iterable<CommunityEmailDTO> readAll(String city) throws IOException {
         final Iterable<PersonEntity> entityList;
-        if (filter != null) {
-            final PersonEntity criteria = mapper.dtoToEntity(filter);
+        if (city != null) {
+            final PersonEntity criteria = new PersonEntity();
+            criteria.setCity(city);
             entityList = entityService.readAllFilteredByCriteria(criteria);
         } else {
             entityList = entityService.readAll();
