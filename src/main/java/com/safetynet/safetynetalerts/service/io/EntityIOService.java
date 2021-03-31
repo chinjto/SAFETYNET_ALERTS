@@ -2,7 +2,7 @@ package com.safetynet.safetynetalerts.service.io;
 
 import java.io.IOException;
 
-public interface AbstractIOService<E> {
+public interface EntityIOService<E> {
 
     Boolean create (E entity) throws IOException;
 
