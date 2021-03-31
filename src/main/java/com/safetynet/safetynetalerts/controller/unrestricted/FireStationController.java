@@ -1,4 +1,4 @@
-package com.safetynet.safetynetalerts.controller;
+package com.safetynet.safetynetalerts.controller.unrestricted;
 
 import lombok.NoArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;

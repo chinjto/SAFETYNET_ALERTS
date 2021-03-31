@@ -1,4 +1,4 @@
-package com.safetynet.safetynetalerts.dto;
+package com.safetynet.safetynetalerts.dto.unrestricted;
 
 import com.safetynet.safetynetalerts.entity.PersonEntity;
 import lombok.Data;

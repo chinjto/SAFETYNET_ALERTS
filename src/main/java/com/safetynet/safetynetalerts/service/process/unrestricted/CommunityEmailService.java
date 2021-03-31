@@ -1,6 +1,6 @@
-package com.safetynet.safetynetalerts.service;
+package com.safetynet.safetynetalerts.service.process.unrestricted;
 
-import com.safetynet.safetynetalerts.dto.CommunityEmailDTO;
+import com.safetynet.safetynetalerts.dto.unrestricted.CommunityEmailDTO;
 import com.safetynet.safetynetalerts.mapper.CommunityEmailDtoToPersonMapper;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;

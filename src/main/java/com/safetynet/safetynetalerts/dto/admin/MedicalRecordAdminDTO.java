@@ -1,7 +1,5 @@
 package com.safetynet.safetynetalerts.dto.admin;
 
-import com.safetynet.safetynetalerts.entity.MedicalRecordEntity;
-import com.safetynet.safetynetalerts.service.admin.MedicalRecordServiceAdmin;
 import lombok.Data;
 
 @Data

@@ -9,16 +9,12 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MedicalRecordEntity {
+public class DataSourceEntity {
 
-    private String firstName;
+    private List<PersonEntity> persons;
 
-    private String lastName;
+    private List<FireStationEntity> firestations;
 
-    private String birthdate;
-
-    private List<String> medications;
-
-    private List<String> allergies;
+    private List<MedicalRecordEntity> medicalrecords;
 
 }

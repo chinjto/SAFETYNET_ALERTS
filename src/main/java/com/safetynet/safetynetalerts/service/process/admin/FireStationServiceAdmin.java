@@ -1,4 +1,4 @@
-package com.safetynet.safetynetalerts.service.admin;
+package com.safetynet.safetynetalerts.service.process.admin;
 
 import com.safetynet.safetynetalerts.entity.FireStationEntity;
 import lombok.RequiredArgsConstructor;

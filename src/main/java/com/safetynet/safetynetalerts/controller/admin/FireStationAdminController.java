@@ -1,7 +1,7 @@
 package com.safetynet.safetynetalerts.controller.admin;
 
 import com.safetynet.safetynetalerts.dto.admin.FireStationAdminDTO;
-import com.safetynet.safetynetalerts.service.admin.FireStationServiceAdmin;
+import com.safetynet.safetynetalerts.service.process.admin.FireStationServiceAdmin;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

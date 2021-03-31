@@ -1,12 +1,8 @@
 package com.safetynet.safetynetalerts.dto.admin;
 
 import com.safetynet.safetynetalerts.entity.PersonEntity;
-import com.safetynet.safetynetalerts.service.admin.PersonServiceAdmin;
+import com.safetynet.safetynetalerts.service.process.admin.PersonServiceAdmin;
 import lombok.Data;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 
 @Data
 public class PersonAdminDTO {

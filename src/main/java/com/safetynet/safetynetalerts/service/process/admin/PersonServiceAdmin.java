@@ -1,4 +1,4 @@
-package com.safetynet.safetynetalerts.service.admin;
+package com.safetynet.safetynetalerts.service.process.admin;
 
 import com.safetynet.safetynetalerts.dto.admin.PersonAdminDTO;
 import lombok.RequiredArgsConstructor;

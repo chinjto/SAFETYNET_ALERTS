@@ -1,6 +1,6 @@
 package com.safetynet.safetynetalerts.mapper.impl;
 
-import com.safetynet.safetynetalerts.dto.CommunityEmailDTO;
+import com.safetynet.safetynetalerts.dto.unrestricted.CommunityEmailDTO;
 import com.safetynet.safetynetalerts.entity.PersonEntity;
 import com.safetynet.safetynetalerts.mapper.CommunityEmailDtoToPersonMapper;
 import org.springframework.stereotype.Component;

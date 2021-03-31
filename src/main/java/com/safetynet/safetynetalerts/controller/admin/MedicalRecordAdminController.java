@@ -1,8 +1,7 @@
 package com.safetynet.safetynetalerts.controller.admin;
 
 import com.safetynet.safetynetalerts.dto.admin.MedicalRecordAdminDTO;
-import com.safetynet.safetynetalerts.entity.MedicalRecordEntity;
-import com.safetynet.safetynetalerts.service.admin.MedicalRecordServiceAdmin;
+import com.safetynet.safetynetalerts.service.process.admin.MedicalRecordServiceAdmin;
 import lombok.NonNull;
 import org.springframework.web.bind.annotation.*;
 
