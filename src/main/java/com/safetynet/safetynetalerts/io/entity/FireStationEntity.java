@@ -1,4 +1,4 @@
-package com.safetynet.safetynetalerts.entity;
+package com.safetynet.safetynetalerts.io.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

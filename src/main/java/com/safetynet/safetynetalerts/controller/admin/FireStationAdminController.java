@@ -6,6 +6,8 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+
 /**
  * Controller for {@link FireStationAdminDTO fire firestations} resources.
  */
@@ -27,7 +29,7 @@ public class FireStationAdminController {
      * @return true if process succeeded, else false
      */
     @PostMapping
-    public Boolean create(FireStationAdminDTO data) {
+    public Boolean create(FireStationAdminDTO data) throws IOException {
         return service.create(data);
     }
 
@@ -38,7 +40,7 @@ public class FireStationAdminController {
      * @return true if process succeeded, else false
      */
     @PutMapping
-    public Boolean update(FireStationAdminDTO data) {
+    public Boolean update(FireStationAdminDTO data) throws IOException {
         return service.update(data);
     }
 
@@ -49,7 +51,7 @@ public class FireStationAdminController {
      * @return true if process succeeded, else false
      */
     @DeleteMapping
-    public Boolean delete(FireStationAdminDTO data) {
+    public Boolean delete(FireStationAdminDTO data) throws IOException {
         return service.delete(data);
     }
 

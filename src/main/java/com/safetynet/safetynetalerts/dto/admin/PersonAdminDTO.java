@@ -1,6 +1,6 @@
 package com.safetynet.safetynetalerts.dto.admin;
 
-import com.safetynet.safetynetalerts.entity.PersonEntity;
+import com.safetynet.safetynetalerts.io.entity.PersonEntity;
 import com.safetynet.safetynetalerts.service.process.admin.PersonServiceAdmin;
 import lombok.Data;
 
