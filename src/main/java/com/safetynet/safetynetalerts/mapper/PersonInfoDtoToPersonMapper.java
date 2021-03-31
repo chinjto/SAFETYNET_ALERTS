@@ -1,6 +1,6 @@
 package com.safetynet.safetynetalerts.mapper;
 
-import com.safetynet.safetynetalerts.dto.PersonInfoDTO;
+import com.safetynet.safetynetalerts.dto.unrestricted.PersonInfoDTO;
 import com.safetynet.safetynetalerts.entity.PersonEntity;
 
 public interface PersonInfoDtoToPersonMapper {

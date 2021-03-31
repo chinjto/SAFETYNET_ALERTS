@@ -1,6 +1,6 @@
 package com.safetynet.safetynetalerts.dto.admin;
 
-import com.safetynet.safetynetalerts.service.admin.FireStationServiceAdmin;
+import com.safetynet.safetynetalerts.service.process.admin.FireStationServiceAdmin;
 import lombok.Data;
 
 @Data

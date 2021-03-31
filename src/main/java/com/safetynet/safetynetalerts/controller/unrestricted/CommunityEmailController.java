@@ -1,7 +1,7 @@
-package com.safetynet.safetynetalerts.controller;
+package com.safetynet.safetynetalerts.controller.unrestricted;
 
-import com.safetynet.safetynetalerts.dto.CommunityEmailDTO;
-import com.safetynet.safetynetalerts.service.CommunityEmailService;
+import com.safetynet.safetynetalerts.dto.unrestricted.CommunityEmailDTO;
+import com.safetynet.safetynetalerts.service.process.unrestricted.CommunityEmailService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

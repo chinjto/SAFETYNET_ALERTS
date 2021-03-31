@@ -1,6 +1,6 @@
 package com.safetynet.safetynetalerts.mapper;
 
-import com.safetynet.safetynetalerts.dto.CommunityEmailDTO;
+import com.safetynet.safetynetalerts.dto.unrestricted.CommunityEmailDTO;
 import com.safetynet.safetynetalerts.entity.PersonEntity;
 
 public interface CommunityEmailDtoToPersonMapper {
