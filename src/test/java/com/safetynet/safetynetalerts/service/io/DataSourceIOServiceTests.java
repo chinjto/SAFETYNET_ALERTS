@@ -1,4 +1,4 @@
-package com.safetynet.safetynetalerts.poc;
+package com.safetynet.safetynetalerts.service.io;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -16,13 +16,13 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class JacksonApplicationPOC {
+public class DataSourceIOServiceTests {
 
     @Autowired
     DataSourceIOService dataSourceIOService;
 
     @Test
-    public void readAndWriteTest() throws Exception {
+    public void readTest() throws Exception {
 
         // initialisation du mapper json
         final ObjectMapper objectMapper = new ObjectMapper();
@@ -35,8 +35,22 @@ public class JacksonApplicationPOC {
         Assert.assertEquals(13, dataSource.getFirestations().size());
         Assert.assertEquals(23, dataSource.getMedicalrecords().size());
 
+    }
+
+    @Test
+    public void WriteTest() throws Exception {
+
+        // initialisation du mapper json
+        final ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+
+        // test sur la lecture
+        final DataSourceEntity dataSource = dataSourceIOService.pull();
+
         // test sur l'écriture
         dataSourceIOService.push(dataSource);
+
+        // TODO check que les données sont bien insérées dans le fichier cible
 
     }
 
