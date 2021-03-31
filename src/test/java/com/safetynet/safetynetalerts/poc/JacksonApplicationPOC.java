@@ -2,10 +2,21 @@ package com.safetynet.safetynetalerts.poc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.safetynet.safetynetalerts.entity.InputDataEntity;
+import com.safetynet.safetynetalerts.SafetynetalertsApplication;
+import com.safetynet.safetynetalerts.entity.DataSourceEntity;
+import com.safetynet.safetynetalerts.service.io.DataSourceIOService;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.File;
 import java.nio.file.Paths;
@@ -13,32 +24,29 @@ import java.nio.file.Paths;
 /**
  * POC pour l'utilisation de Jackson pour lire / écrire un fichier json.
  */
-@SpringBootApplication
-public class JacksonApplicationPOC implements CommandLineRunner {
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = SafetynetalertsApplication.class)
+public class JacksonApplicationPOC {
 
-    public static void main(String[] args) {
-        SpringApplication.run(JacksonApplicationPOC.class, args);
-    }
+    @Autowired
+    DataSourceIOService dataSourceIOService;
 
-    @Override
-    public void run(String... args) throws Exception {
+    @Test
+    public void readAndWriteTest() throws Exception {
 
         // initialisation du mapper json
         final ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
 
         // test sur la lecture
-        final File inFile = Paths.get("src/main/resources/data.json").toFile();
-        final InputDataEntity data = objectMapper.readValue(inFile, InputDataEntity.class);
-        System.out.println(data);
+        final DataSourceEntity dataSource = dataSourceIOService.pull();
+
+        Assert.assertEquals(23, dataSource.getPersons().size());
+        Assert.assertEquals(13, dataSource.getFirestations().size());
+        Assert.assertEquals(23, dataSource.getMedicalrecords().size());
 
         // test sur l'écriture
-        final File outFile = Paths.get("src/test/resources/data2.json").toFile();
-        objectMapper.writeValue(outFile, data);
-        //*/
-
-        // fin du programme
-        System.exit(0);
+        dataSourceIOService.push(dataSource);
 
     }
 

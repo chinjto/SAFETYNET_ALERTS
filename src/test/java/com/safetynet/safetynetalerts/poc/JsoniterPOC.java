@@ -3,7 +3,7 @@ package com.safetynet.safetynetalerts.poc;
 import com.jsoniter.JsonIterator;
 import com.jsoniter.output.JsonStream;
 import com.safetynet.safetynetalerts.entity.FireStationEntity;
-import com.safetynet.safetynetalerts.entity.InputDataEntity;
+import com.safetynet.safetynetalerts.entity.DataSourceEntity;
 import com.safetynet.safetynetalerts.entity.MedicalRecordEntity;
 import com.safetynet.safetynetalerts.entity.PersonEntity;
 import org.junit.Assert;
@@ -261,11 +261,11 @@ public class JsoniterPOC {
                 "        ] \n" +
                 "}";
 
-        InputDataEntity data = JsonIterator.deserialize(input, InputDataEntity.class);
+        DataSourceEntity data = JsonIterator.deserialize(input, DataSourceEntity.class);
 
-        Assert.assertEquals(23, data.getPersons().length);
-        Assert.assertEquals(13, data.getFirestations().length);
-        Assert.assertEquals(23, data.getMedicalrecords().length);
+        Assert.assertEquals(23, data.getPersons().size());
+        Assert.assertEquals(13, data.getFirestations().size());
+        Assert.assertEquals(23, data.getMedicalrecords().size());
 
     }
 
@@ -280,13 +280,13 @@ public class JsoniterPOC {
             strBuilder.append(scan.nextLine());
         scan.close();
         final String strIn = strBuilder.toString();
-        final InputDataEntity data = JsonIterator.deserialize(strIn, InputDataEntity.class);
+        final DataSourceEntity data = JsonIterator.deserialize(strIn, DataSourceEntity.class);
         final String strOut = JsonStream.serialize(data);
         System.out.println(strOut);
 
-        Assert.assertEquals(23, data.getPersons().length);
-        Assert.assertEquals(13, data.getFirestations().length);
-        Assert.assertEquals(23, data.getMedicalrecords().length);
+        Assert.assertEquals(23, data.getPersons().size());
+        Assert.assertEquals(13, data.getFirestations().size());
+        Assert.assertEquals(23, data.getMedicalrecords().size());
 
     }
 
