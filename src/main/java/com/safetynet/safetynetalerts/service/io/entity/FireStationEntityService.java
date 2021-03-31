@@ -12,7 +12,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class FireStationIOService implements EntityService<FireStationEntity> {
+public class FireStationEntityService implements EntityService<FireStationEntity> {
 
     @NonNull
     DataSourceService dataSourceService;
@@ -21,16 +21,20 @@ public class FireStationIOService implements EntityService<FireStationEntity> {
     public Boolean create(FireStationEntity entity) throws IOException {
         final DataSource dataSource = dataSourceService.pull();
         final List<FireStationEntity> list = dataSource.getFirestations();
-        list.add(entity);
-        dataSourceService.push(dataSource);
-        return true;
+        if (list.indexOf(entity) < 0) {
+            list.add(entity);
+            dataSourceService.push(dataSource);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
     public Boolean update(FireStationEntity entity) throws IOException {
         final DataSource dataSource = dataSourceService.pull();
         final List<FireStationEntity> list = dataSource.getFirestations();
-        // TODO find and update into data source
+        list.set(list.indexOf(entity), entity);
         dataSourceService.push(dataSource);
         return true;
     }
@@ -39,9 +43,9 @@ public class FireStationIOService implements EntityService<FireStationEntity> {
     public Boolean delete(FireStationEntity entity) throws IOException {
         final DataSource dataSource = dataSourceService.pull();
         final List<FireStationEntity> list = dataSource.getFirestations();
-        // TODO find and delete into data source
+        final Boolean result = list.remove(entity);
         dataSourceService.push(dataSource);
-        return true;
+        return result;
     }
 
 }

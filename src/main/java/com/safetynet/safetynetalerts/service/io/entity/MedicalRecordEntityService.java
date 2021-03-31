@@ -12,7 +12,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class MedicalRecordIOService implements EntityService<MedicalRecordEntity> {
+public class MedicalRecordEntityService implements EntityService<MedicalRecordEntity> {
 
     @NonNull
     DataSourceService dataSourceService;

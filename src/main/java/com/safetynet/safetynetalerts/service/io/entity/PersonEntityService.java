@@ -12,7 +12,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class PersonIOService implements EntityService<PersonEntity> {
+public class PersonEntityService implements EntityService<PersonEntity> {
 
     @NonNull
     DataSourceService dataSourceService;
