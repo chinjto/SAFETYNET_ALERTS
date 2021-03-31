@@ -2,7 +2,6 @@ package com.safetynet.safetynetalerts.poc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.safetynet.safetynetalerts.SafetynetalertsApplication;
 import com.safetynet.safetynetalerts.entity.DataSourceEntity;
 import com.safetynet.safetynetalerts.service.io.DataSourceIOService;
 import org.junit.Assert;
@@ -15,8 +14,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 /**
  * POC pour l'utilisation de Jackson pour lire / écrire un fichier json.
  */
+@SpringBootTest
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = SafetynetalertsApplication.class)
 public class JacksonApplicationPOC {
 
     @Autowired
