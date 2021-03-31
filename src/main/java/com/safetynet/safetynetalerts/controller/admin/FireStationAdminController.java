@@ -4,6 +4,7 @@ import com.safetynet.safetynetalerts.dto.admin.FireStationAdminDTO;
 import com.safetynet.safetynetalerts.service.process.admin.FireStationServiceAdmin;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -11,6 +12,7 @@ import java.io.IOException;
 /**
  * Controller for {@link FireStationAdminDTO fire firestations} resources.
  */
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/firestation")
@@ -30,7 +32,12 @@ public class FireStationAdminController {
      */
     @PostMapping
     public Boolean create(@RequestBody FireStationAdminDTO data) throws IOException {
-        return service.create(data);
+        try {
+            return service.create(data);
+        } catch (Exception e) {
+            log.error("Error in FireStationAdminController#create process", e);
+            return false;
+        }
     }
 
     /**
@@ -41,7 +48,12 @@ public class FireStationAdminController {
      */
     @PutMapping
     public Boolean update(@RequestBody FireStationAdminDTO data) throws IOException {
-        return service.update(data);
+        try {
+            return service.update(data);
+        } catch (Exception e) {
+            log.error("Error in FireStationAdminController#update process", e);
+            return false;
+        }
     }
 
     /**
@@ -52,7 +64,12 @@ public class FireStationAdminController {
      */
     @DeleteMapping
     public Boolean delete(@RequestBody FireStationAdminDTO data) throws IOException {
-        return service.delete(data);
+        try {
+            return service.delete(data);
+        } catch (Exception e) {
+            log.error("Error in FireStationAdminController#delete process", e);
+            return false;
+        }
     }
 
 }
