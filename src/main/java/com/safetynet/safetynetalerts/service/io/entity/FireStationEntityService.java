@@ -48,4 +48,16 @@ public class FireStationEntityService implements EntityService<FireStationEntity
         return result;
     }
 
+    @Override
+    public Iterable<FireStationEntity> readAll() throws IOException {
+        final DataSource dataSource = dataSourceService.pull();
+        return dataSource.getFirestations();
+    }
+
+    @Override
+    public Iterable<FireStationEntity> readAllFilteredByCriteria(FireStationEntity criteria) {
+        // TODO
+        return null;
+    }
+
 }

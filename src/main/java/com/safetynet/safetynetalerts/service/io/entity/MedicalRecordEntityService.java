@@ -44,4 +44,16 @@ public class MedicalRecordEntityService implements EntityService<MedicalRecordEn
         return true;
     }
 
+    @Override
+    public Iterable<MedicalRecordEntity> readAll() throws IOException {
+        final DataSource dataSource = dataSourceService.pull();
+        return dataSource.getMedicalrecords();
+    }
+
+    @Override
+    public Iterable<MedicalRecordEntity> readAllFilteredByCriteria(MedicalRecordEntity criteria) {
+        // TODO
+        return null;
+    }
+
 }

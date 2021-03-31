@@ -2,10 +2,7 @@ package com.safetynet.safetynetalerts.controller.unrestricted;
 
 import com.safetynet.safetynetalerts.dto.unrestricted.CommunityEmailDTO;
 import com.safetynet.safetynetalerts.service.process.unrestricted.CommunityEmailService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
@@ -20,8 +17,8 @@ public class CommunityEmailController {
     }
 
     @GetMapping
-    public Iterable<CommunityEmailDTO> getAll(@RequestParam(required = false) String city) throws IOException {
-        return service.getAll(city);
+    public Iterable<CommunityEmailDTO> getAll(@RequestBody(required = false) CommunityEmailDTO filter) throws IOException {
+        return service.readAll(filter);
     }
 
 }
