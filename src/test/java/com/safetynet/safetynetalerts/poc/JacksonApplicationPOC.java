@@ -5,21 +5,12 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.safetynet.safetynetalerts.SafetynetalertsApplication;
 import com.safetynet.safetynetalerts.entity.DataSourceEntity;
 import com.safetynet.safetynetalerts.service.io.DataSourceIOService;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.io.File;
-import java.nio.file.Paths;
 
 /**
  * POC pour l'utilisation de Jackson pour lire / écrire un fichier json.
