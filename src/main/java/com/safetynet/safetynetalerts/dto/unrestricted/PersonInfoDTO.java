@@ -1,6 +1,6 @@
 package com.safetynet.safetynetalerts.dto.unrestricted;
 
-import com.safetynet.safetynetalerts.entity.MedicalRecordEntity;
+import com.safetynet.safetynetalerts.io.entity.MedicalRecordEntity;
 import lombok.Data;
 
 /**

@@ -1,29 +1,17 @@
 package com.safetynet.safetynetalerts.dto.admin;
 
-import com.safetynet.safetynetalerts.service.process.admin.FireStationServiceAdmin;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class FireStationAdminDTO {
 
     private String address;
 
     private String station;
-
-    public static Iterable<FireStationServiceAdmin> readAll() {
-        return null;
-    }
-
-    public static FireStationAdminDTO create(final FireStationAdminDTO fireStation) {
-        return null;
-    }
-
-    public static FireStationAdminDTO update(final String address, final FireStationAdminDTO fireStation) {
-        return null;
-    }
-
-    public static Boolean delete(final String address) {
-        return null;
-    }
 
 }

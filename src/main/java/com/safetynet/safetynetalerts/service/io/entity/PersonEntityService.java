@@ -1,23 +1,25 @@
-package com.safetynet.safetynetalerts.service.io;
+package com.safetynet.safetynetalerts.service.io.entity;
 
-import com.safetynet.safetynetalerts.entity.DataSourceEntity;
-import com.safetynet.safetynetalerts.entity.FireStationEntity;
-import com.safetynet.safetynetalerts.entity.PersonEntity;
+import com.safetynet.safetynetalerts.io.datasource.DataSource;
+import com.safetynet.safetynetalerts.io.entity.PersonEntity;
+import com.safetynet.safetynetalerts.service.io.datasource.DataSourceService;
 import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
 
 @Service
-public class PersonIOService implements EntityIOService<PersonEntity> {
+@RequiredArgsConstructor
+public class PersonEntityService implements EntityService<PersonEntity> {
 
     @NonNull
-    DataSourceIOService dataSourceService;
+    DataSourceService dataSourceService;
 
     @Override
     public Boolean create(PersonEntity entity) throws IOException {
-        final DataSourceEntity dataSource = dataSourceService.pull();
+        final DataSource dataSource = dataSourceService.pull();
         final List<PersonEntity> list = dataSource.getPersons();
         list.add(entity);
         dataSourceService.push(dataSource);
@@ -26,7 +28,7 @@ public class PersonIOService implements EntityIOService<PersonEntity> {
 
     @Override
     public Boolean update(PersonEntity entity) throws IOException {
-        final DataSourceEntity dataSource = dataSourceService.pull();
+        final DataSource dataSource = dataSourceService.pull();
         final List<PersonEntity> list = dataSource.getPersons();
         // TODO find and update into data source
         dataSourceService.push(dataSource);
@@ -35,7 +37,7 @@ public class PersonIOService implements EntityIOService<PersonEntity> {
 
     @Override
     public Boolean delete(PersonEntity entity) throws IOException {
-        final DataSourceEntity dataSource = dataSourceService.pull();
+        final DataSource dataSource = dataSourceService.pull();
         final List<PersonEntity> list = dataSource.getPersons();
         // TODO find and delete into data source
         dataSourceService.push(dataSource);

@@ -1,7 +1,6 @@
 package com.safetynet.safetynetalerts.service.process.admin;
 
 import com.safetynet.safetynetalerts.dto.admin.MedicalRecordAdminDTO;
-import com.safetynet.safetynetalerts.entity.MedicalRecordEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

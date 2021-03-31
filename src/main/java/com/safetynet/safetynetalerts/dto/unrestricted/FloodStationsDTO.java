@@ -1,6 +1,6 @@
 package com.safetynet.safetynetalerts.dto.unrestricted;
 
-import com.safetynet.safetynetalerts.entity.PersonEntity;
+import com.safetynet.safetynetalerts.io.entity.PersonEntity;
 import lombok.Data;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package com.safetynet.safetynetalerts.mapper.impl;
 
 import com.safetynet.safetynetalerts.dto.unrestricted.PersonInfoDTO;
-import com.safetynet.safetynetalerts.entity.PersonEntity;
+import com.safetynet.safetynetalerts.io.entity.PersonEntity;
 import com.safetynet.safetynetalerts.mapper.PersonInfoDtoToPersonMapper;
 import org.springframework.stereotype.Component;
 

@@ -2,8 +2,8 @@ package com.safetynet.safetynetalerts.service.io;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.safetynet.safetynetalerts.entity.DataSourceEntity;
-import com.safetynet.safetynetalerts.service.io.DataSourceIOService;
+import com.safetynet.safetynetalerts.io.datasource.DataSource;
+import com.safetynet.safetynetalerts.service.io.datasource.DataSourceService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,7 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class DataSourceIOServiceTests {
 
     @Autowired
-    DataSourceIOService dataSourceIOService;
+    DataSourceService dataSourceIOService;
 
     @Test
     public void readTest() throws Exception {
@@ -29,7 +29,7 @@ public class DataSourceIOServiceTests {
         objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
 
         // test sur la lecture
-        final DataSourceEntity dataSource = dataSourceIOService.pull();
+        final DataSource dataSource = dataSourceIOService.pull();
 
         Assert.assertEquals(23, dataSource.getPersons().size());
         Assert.assertEquals(13, dataSource.getFirestations().size());
@@ -45,7 +45,7 @@ public class DataSourceIOServiceTests {
         objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
 
         // test sur la lecture
-        final DataSourceEntity dataSource = dataSourceIOService.pull();
+        final DataSource dataSource = dataSourceIOService.pull();
 
         // test sur l'écriture
         dataSourceIOService.push(dataSource);
